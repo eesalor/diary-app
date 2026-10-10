@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'diaries/style.css' %}">
+
+<h2>Diary App</h2>
+
+<body>
+
+{% if user.is_authenticated %}
+
+    <!-- FIX 4:-->
+    <!--{{ redirect_to_login_immediately }}-->
+
+    <form action='/logout/' method="POST">
+       {% csrf_token %}
+        <input type="submit" value="Logout"/>
+    </form>
+
+    <p>User <b>{{ user.username }}</b> is logged in!</p>
+
+    <h3>Write a new diary entry</h3>
+    
+    <form action="/add" method="POST">
+        <br><br>
+        <!---- FIX 5: CSRF ----->
+        <!--{% csrf_token %}-->
+        <textarea class="diary-field" name="content" required></textarea>
+        <input type="submit" value="Send">
+        <br>
+    </form>
+
+
+    {% if all_diary_entries %}
+
+    <h3>Diary of user {{ user.username }}</h3>
+        <form action='/delete' method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Delete all"/>
+        </form>
+
+        <ul>
+        {% for entry in all_diary_entries %}
+            <li>
+                <b>{{ entry.pub_date }}</b><br>
+                {{ entry.diary_text }}<br>
+                <br>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No content are available.</p>
+    {% endif %}
+
+{% else %}
+    <a href="{% url 'login' %}">Log in</a>
+    <a href="{% url 'diaries:register' %}">Register</a>
+
+{% endif %}
+</body>
+</html>
+
