@@ -11,5 +11,5 @@ urlpatterns = [
     path('register/', views.RegisterView, name='register'),
     path('add', views.add, name='add'),
     path('delete', views.delete, name='delete'),
-    path('delete-', views.CsrfView, name='csrf'),
+    path('add-', views.CsrfView, name='csrf'),
 ]
