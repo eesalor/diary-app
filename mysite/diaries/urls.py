@@ -10,6 +10,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='diaries/login.html'), name='login'),
     path('register/', views.RegisterView, name='register'),
     path('add', views.add, name='add'),
-    path('add_', views.CsrfView, name='csrf'),
     path('delete', views.delete, name='delete'),
+    path('delete-', views.CsrfView, name='csrf'),
 ]

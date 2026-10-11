@@ -48,12 +48,7 @@ def UserView(request, userid):
     #    return HttpResponseForbidden("Forbidden request")
     
     # ------------------------------------------
-       
 
-@login_required
-# ----- FLAW 5: CSRF -----
-@csrf_exempt # FIX 5: Remove the @csrf_exempt
-# ------------------------
 
 def add(request):
     if not request.user:
@@ -91,6 +86,9 @@ def add(request):
 
 
 @login_required
+# ----- FLAW 5: CSRF -----
+@csrf_exempt # FIX 5: Remove the @csrf_exempt
+# ------------------------
 def delete(request):
     if not request.user:
         return redirect('/')

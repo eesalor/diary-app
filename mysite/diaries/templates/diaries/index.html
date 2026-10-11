@@ -24,9 +24,8 @@
     <h3>Write a new diary entry</h3>
     
     <form action="/add" method="POST">
+        {% csrf_token %}
         <br><br>
-        <!---- FIX 5: CSRF ----->
-        <!--{% csrf_token %}-->
         <textarea class="diary-field" name="content" required></textarea>
         <input type="submit" value="Send">
         <br>
@@ -36,8 +35,10 @@
     {% if all_diary_entries %}
 
     <h3>Diary of user {{ user.username }}</h3>
+
         <form action='/delete' method="POST">
-            {% csrf_token %}
+        <!-- FIX 5: CSRF --->
+        <!--{% csrf_token %}-->
             <input type="submit" value="Delete all"/>
         </form>
 
