@@ -23,19 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ----- FIX 2: Cryptographic Failure ------
 
-import os
-import dotenv #
-dotenv_file = os.path.join(BASE_DIR, ".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
-SECRET_KEY = os.environ.get('SECRET_KEY')
+#import os
+#import dotenv
+#dotenv_file = os.path.join(BASE_DIR, ".env")
+#if os.path.isfile(dotenv_file):
+#    dotenv.load_dotenv(dotenv_file)
+#SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # -----------------------------------------
 
 
 # ----- FLAW 2: Cryptographic Failure -----
 
-#SECRET_KEY = 
+SECRET_KEY = 'django-insecure-t=zt2wd28$$ekl5h%_i67yvfe&5z)x$oq@3g$4(=u5m*$19g3p'
 
 # -----------------------------------------
 
