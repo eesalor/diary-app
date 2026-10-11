@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'diaries/style.css' %}">
+
+<body>
+    <h2>Diary App</h2>
+
+    <h3>Write a new diary entry</h3>
+        <form action="http://127.0.0.1:8000/delete" method="POST">
+            <br><br>
+            <textarea></textarea>
+            <input type="submit" value="Send">
+        </form>
+</body>
+
+</html>
