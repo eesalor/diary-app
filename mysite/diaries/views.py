@@ -49,7 +49,7 @@ def UserView(request, userid):
     
     # ------------------------------------------
 
-
+@login_required
 def add(request):
     if not request.user:
         return redirect('/')
@@ -70,7 +70,7 @@ def add(request):
             VALUES ('%s', '%s', '%s')"""
             % (user.id, time, new_content)
         )
-        print(time)
+
         c.close()
 
         # ---------------------------------
