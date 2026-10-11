@@ -77,8 +77,8 @@ def add(request):
 
         # ----- FIX 3: SQL-injection ------
 
-        # diary_entry = DiaryEntry.objects.create(user=user, diary_text=new_content, pub_date=time)
-        # diary_entry.save()
+        #diary_entry = DiaryEntry.objects.create(user=user, diary_text=new_content, pub_date=time)
+        #diary_entry.save()
     
         # ---------------------------------
 
