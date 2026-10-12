@@ -61,6 +61,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # ----- FIX 4: Identification and Authentication Failure -----
+    #'django_session_timeout.middleware.SessionTimeoutMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -97,10 +99,13 @@ LOGOUT_REDIRECT_URL = '/'
 
 # ----- FIX 4: Identification and Authentication Failure -----
 
-#SESSION_COOKIE_AGE = 10 # 30 * 60 = 1800
-#AUTO_LOGOUT = {'IDLE_TIME': SESSION_COOKIE_AGE,
+#SESSION_EXPIRE_SECONDS = 20
+#SESSION_TIMEOUT_REDIRECT = '/'
+
+#AUTO_LOGOUT = {'IDLE_TIME': 10,
 #               'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
 #}
+
 # ------------------------------------------------------------
 
 
