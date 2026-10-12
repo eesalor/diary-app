@@ -6,19 +6,18 @@
 <link rel="stylesheet" type="text/css" href="{% static 'diaries/style.css' %}">
 
 <body>
-<h2>Diary-app</h2>
-<a href="{% url 'diaries:index' %}">Home page</a>
-<br>
-<h3>Login page</h3>
 
-<form method="POST">
-  {% csrf_token %}
-  {{ form }}
+  <h2>Diary App</h2>
+  <a href="{% url 'diaries:index' %}">Home page</a>
   <br>
-  <button type="submit">Login</button>
-</form>
+  <h3>Login page</h3>
 
-
+  <form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <br>
+    <button type="submit">Login</button>
+  </form>
 
 </body>
 </html>
