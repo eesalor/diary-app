@@ -99,10 +99,10 @@ LOGOUT_REDIRECT_URL = '/'
 
 # ----- FIX 4: Identification and Authentication Failure -----
 
-#SESSION_EXPIRE_SECONDS = 20
-#SESSION_TIMEOUT_REDIRECT = '/'
+#SESSION_EXPIRE_SECONDS = 30 # seconds
 
-#AUTO_LOGOUT = {'IDLE_TIME': 10,
+#AUTO_LOGOUT = {'IDLE_TIME': 15,
+#               'SESSION_TIME': SESSION_EXPIRE_SECONDS,
 #               'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
 #}
 
